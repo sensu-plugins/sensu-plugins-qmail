@@ -1,7 +1,15 @@
+
+require 'sensu-plugins-qmail/version'
+
+# Load the defaults
+
 #
-# Set gem version
+# Default class
 #
 module SensuPluginsQmail
-  # Gem version
-  VERSION = '0.0.1.alpha.2'
+  class << self
+  end
+
+  class << self
+  end
 end
