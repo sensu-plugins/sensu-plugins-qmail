@@ -1,19 +1,31 @@
 language: ruby
 cache:
-  - bundler
+- bundler
 install:
-  - bundle install
+- bundle install
 rvm:
-  - 1.9.3
-  - 2.0
-  - 2.1
-  - 2.2
+- 1.9.3
+- 2.0
+- 2.1
+- 2.2
 notifications:
   email:
     recipients:
-      - sensu-plugin@sensu-plugins.io
+    - sensu-plugin@sensu-plugins.io
     on_success: change
     on_failure: always
-
 script:
-  - 'bundle exec rake default'
+- bundle exec rake default
+deploy:
+  provider: rubygems
+  api_key:
+    secure: SOOpSfflSvDpJl4nNq+b8JmPoF6gWmwhL1XNPoU+3sq96wpwgTHLtLs+C7Dixp69n32Y1WClY4RadR2gliBwwxwh3DN9GeJmVtGuszQZVImA4U1DxenQepcOuaU4P+aZ0YyUL5ohbLWcnYNfiNgDYN5F6qO3G9navmFcrJqPY9g=
+  gem: sensu-plugins-qmail
+  on:
+    tags: true
+    all_branches: true
+    rvm: 1.9.3
+    rvm: 2.0
+    rvm: 2.1
+    rvm: 2.2
+    repo: sensu-plugins/sensu-plugins-qmail
