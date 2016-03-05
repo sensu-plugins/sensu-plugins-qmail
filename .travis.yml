@@ -16,13 +16,15 @@ notifications:
     on_failure: always
 script:
 - bundle exec rake default
+- gem build sensu-plugins-qmail.gemspec
+- gem install sensu-plugins-qmail-*.gem
 deploy:
   provider: rubygems
   api_key:
-    secure: SOOpSfflSvDpJl4nNq+b8JmPoF6gWmwhL1XNPoU+3sq96wpwgTHLtLs+C7Dixp69n32Y1WClY4RadR2gliBwwxwh3DN9GeJmVtGuszQZVImA4U1DxenQepcOuaU4P+aZ0YyUL5ohbLWcnYNfiNgDYN5F6qO3G9navmFcrJqPY9g=
+    secure: d9ugXMPDv82VIAuL9zHto5W4M0EWwxZ71QHxT0ZxTvo4mxBYHMT6gjQgaAeUi9ef31TFOBGFgoZM/7QaRtYxLEn8R7lp+CQVfgZgfXxUUyNBpRZa5tWJFdP0CcIBQb31RRWGXWMC2U4tBDouKHTDca7tZtjJlCWdrJPcczNcQ2g=
   gem: sensu-plugins-qmail
   on:
-    tags: true
+    ags: true
     all_branches: true
     rvm: 1.9.3
     rvm: 2.0
