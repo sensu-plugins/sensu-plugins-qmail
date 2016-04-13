@@ -24,7 +24,7 @@ deploy:
     secure: d9ugXMPDv82VIAuL9zHto5W4M0EWwxZ71QHxT0ZxTvo4mxBYHMT6gjQgaAeUi9ef31TFOBGFgoZM/7QaRtYxLEn8R7lp+CQVfgZgfXxUUyNBpRZa5tWJFdP0CcIBQb31RRWGXWMC2U4tBDouKHTDca7tZtjJlCWdrJPcczNcQ2g=
   gem: sensu-plugins-qmail
   on:
-    ags: true
+    tags: true
     all_branches: true
     rvm: 1.9.3
     rvm: 2.0
